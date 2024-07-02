@@ -1,5 +1,4 @@
 ﻿using System.Text.Json;
-using Amazon;
 using Amazon.SQS;
 using Amazon.SQS.Model;
 using SqsPublisher;
@@ -9,10 +8,10 @@ var sqsClient = new AmazonSQSClient();
 var customer = new CustomerCreated
 {
     Id = Guid.NewGuid(),
-    Email = "nick@nickchapsas.com",
-    FullName = "Nick Chapsas",
-    DateOfBirth = new DateTime(1993, 1, 1),
-    GitHubUsername = "nickchapsas"
+    Email = "netanelos152@gmail.com",
+    FullName = "Netanel Aknin",
+    DateOfBirth = new DateTime(1993, 2, 15),
+    GitHubUsername = "netanel152"
 };
 
 var queueUrlResponse = await sqsClient.GetQueueUrlAsync("customers");
