@@ -1,6 +1,8 @@
 ﻿using Amazon.SQS;
 using Amazon.SQS.Model;
 
+var queueName = args.Length == 1 ? args[0] : "customsers";
+
 var cts = new CancellationTokenSource();
 var sqsClient = new AmazonSQSClient();
 
