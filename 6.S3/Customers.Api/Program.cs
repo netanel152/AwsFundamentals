@@ -23,7 +23,7 @@ builder.Services.AddControllers().AddFluentValidation(x =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<IAmazonS3,AmazonS3Client>();
+builder.Services.AddSingleton<IAmazonS3, AmazonS3Client>();
 builder.Services.AddSingleton<ICustomerImageService, CustomerImageService>();
 
 builder.Services.AddSingleton<IAmazonDynamoDB, AmazonDynamoDBClient>();

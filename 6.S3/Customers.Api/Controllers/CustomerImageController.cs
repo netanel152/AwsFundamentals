@@ -16,8 +16,8 @@ public class CustomerImageController : ControllerBase
     }
 
     [HttpPost("customers/{id:guid}/image")]
-    public async Task<IActionResult> Upload([FromRoute] Guid id, 
-        [FromForm(Name = "Data")]IFormFile file)
+    public async Task<IActionResult> Upload([FromRoute] Guid id,
+        [FromForm(Name = "Data")] IFormFile file)
     {
         var response = await _customerImageService.UploadIamgeAsync(id, file);
         if (response.HttpStatusCode == HttpStatusCode.OK)
@@ -26,7 +26,7 @@ public class CustomerImageController : ControllerBase
         }
         return BadRequest(response);
     }
-    
+
     [HttpGet("customers/{id:guid}/image")]
     public async Task<IActionResult> Get([FromRoute] Guid id)
     {
@@ -40,7 +40,7 @@ public class CustomerImageController : ControllerBase
             return NotFound();
         }
     }
-    
+
     [HttpDelete("customers/{id:guid}/image")]
     public async Task<IActionResult> Delete([FromRoute] Guid id)
     {
